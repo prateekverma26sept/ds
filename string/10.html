@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/programView.css">
+</head>
+
+<body>
+    
+<pre><code>
+    #include&lt;stdio.h&gt;
+    #include&lt;conio.h&gt;
+    #include&lt;dos.h&gt;
+    char charatbound(char str[], int bound){
+        int i;
+        for (i = 0; str[i] != '\0'; i++);
+        if (bound &gt; i-1 || bound &lt; 0)
+        {
+            return '\0';
+        }
+        return str[bound];
+    }
+    void main(){
+        char str[30], ch;
+        int bound;
+        clrscr();
+        printf("Enter a String\n");
+        gets(str);
+        printf("Enter bound number\n");
+        scanf("%d", &bound);
+        ch = charatbound(str, bound);
+        if (ch == '\0')
+            printf("Invalid Bound Number\n");
+        else
+            printf("%c is at bound no %d\n", ch, bound);
+        
+        delay(5000);
+    }
+        </code>
+</pre>
+<h1>OUTPUT</h1>
+<pre>
+    Enter a String
+    Abhishek                                                                        
+    Enter bound number
+    4                                                                               
+    s is at bound no 4                                                   
+</pre>
+</body>
+
+</html>
