@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/programView.css">
+</head>
+
+<body>
+    
+<pre><code>
+    #include&lt;stdio.h&gt;
+    #include&lt;conio.h&gt;
+    #include&lt;dos.h&gt;
+    void sort(int arr[], int size){
+        int i , j;
+        for (i = 0; i &lt; size; i++){
+            for (j = i+1; j &lt; size; j++){
+                if (arr[i] &gt; arr[j]){
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+    }
+    void main(){
+        int i, arr[10], k;
+        clrscr();
+        for (i = 0; i &lt; 10; i++){
+            printf("Enter Value of position %d\n", i+1);
+            scanf("%d", &arr[i]);
+        }
+    
+        printf("Enter K-th Value\n");
+        scanf("%d", &k);
+        
+        if (k &gt;= 1 && k &lt;=10){
+            sort(arr, 10);
+            printf("K-th Smallest Value of given list is %d", arr[k-1]);
+        }
+        else
+            printf("We have only 10 element list");
+    
+        delay(5000);
+    }
+        </code>
+</pre>
+<h1>OUTPUT</h1>
+<pre>
+Enter Value of position 1
+89                                                                              
+Enter Value of position 2                                                       
+69                                                                              
+Enter Value of position	 3
+59                                                                              
+Enter Value of position 4                                                       
+69                                                                              
+Enter Value of position 5                                                       
+88                                                                              
+Enter Value of position 6                                                       
+69                                                                              
+Enter Value of position 7                                                       
+25                                                                              
+Enter Value of position 8                                                       
+-6                                                                              
+Enter Value of position 9                                                       
+-69                                                                             
+Enter Value of position 10                                                      
+893                                                                             
+Enter K-th Value                                                                
+5                                                                               
+K-th Smallest Value of given list is 69 
+</pre>
+</body>
+
+</html>
