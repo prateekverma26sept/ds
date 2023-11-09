@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/programView.css">
+</head>
+
+<body>
+    
+<pre><code>
+    #include&lt;stdio.h&gt;
+    #include&lt;conio.h&gt;
+    #include&lt;dos.h&gt;
+    long fact(int num){
+        if (num == 0 || num == 1)
+            return 1;
+        return num*fact(num - 1);    
+    }
+    
+    void main(){
+        int n;
+        clrscr();
+        printf("Enter Number \n");
+        scanf("%d", &n);
+    
+        printf("Factorial of %d is %ld", n, fact(n));
+        delay(5000);
+    }
+        </code>
+</pre>
+<h1>OUTPUT</h1>
+<pre>
+    Enter Number 
+    5
+    Factorial of 5 is 120                                  
+</pre>
+</body>
+
+</html>
