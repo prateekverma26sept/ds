@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/programView.css">
+</head>
+
+<body>
+    
+<pre><code>
+#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;dos.h&gt;
+
+void main(){
+    int arr[5], i, arrcpy[5];
+    clrscr();
+    for (i = 0; i &lt; 5; i++)
+    {
+	printf("Enter Value of position %d\n", i+1);
+	scanf("%d", &arr[i]);
+    }
+
+    for (i = 0; i &lt; 5; i++)
+    {
+	arrcpy[i] = arr[i];
+    }
+
+    printf("Printing Copied Array Values\n");
+    for (i = 0; i &lt; 5; i++)
+    {
+	  printf("Value at position %d is %d\n", i+1, arrcpy[i]);
+    }
+    delay(5000);
+}
+        </code>
+</pre>
+<h1>OUTPUT</h1>
+<pre>
+	Enter Value of position 1
+	58                                                                              
+	Enter Value of position 2                                                       
+	36                                                                              
+	Enter Value of position 3                                                       
+	36
+	Enter Value of position 4                                                       
+	98                                                                              
+	Enter Value of position 5                                                       
+	34                                                                              
+	Printing Copied Array Values                                                    
+	Value at position 1 is 58                                                       
+	Value at position 2 is 36                                                       
+	Value at position 3 is 36                                                       
+	Value at position 4 is 98                                                       
+	Value at position 5 is 34                                                       
+</pre>
+</body>
+
+</html>
