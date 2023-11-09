@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/programView.css">
+</head>
+
+<body>
+    
+<pre><code>
+    #include&lt;stdio.h&gt;
+    #include&lt;conio.h&gt;
+    #include&lt;dos.h&gt;
+    void sort(int arr[], int size){
+        int i, j;
+        for (i = 0; i &lt; size; i++){
+        for (j = i+1; j &lt; size; j++){
+            if (arr[i] &gt; arr[j]){
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            }
+        }
+        }
+    }
+    void main(){
+        int arr[10], i, j, avail = 0;
+        clrscr();
+        for (i = 0; i &lt; 10; i++)
+        {
+        printf("Enter Value of position %d\n", i+1);
+        scanf("%d", &arr[i]);
+        }
+        sort(arr, 10);
+        printf("Duplicate Values Are\n");
+        for (i = 0; i &lt; 9; i++)
+        {
+        int count = 1;
+        while (arr[i] ==  arr[i+1]){
+            count++;
+            i++;
+            avail = 1;
+        }
+        if (count &gt; 1){
+            printf("%d\n", arr[i]);
+        }
+
+        }
+
+        if (!avail)
+        {
+        printf("No Duplicate Value Found");
+        }
+        delay(5000);
+    }
+        </code>
+</pre>
+<h1>OUTPUT</h1>
+<pre>
+    Enter Value of position 1
+    89
+    Enter Value of position 2
+    38
+    Enter Value of position 3
+    58
+    Enter Value of position 4
+    254
+    Enter Value of position 5
+    35
+    Enter Value of position 6
+    35
+    Enter Value of position 7
+    38
+    Enter Value of position 8
+    36
+    Enter Value of position 9
+    56
+    Enter Value of position 10
+    69
+    Duplicate Values Are
+    35
+    38
+</pre>
+</body>
+
+</html>
