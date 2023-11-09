@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/programView.css">
+</head>
+
+<body>
+    
+<pre><code>
+    #include&lt;stdio.h&gt;
+    #include&lt;conio.h&gt;
+    #include&lt;dos.h&gt;
+    void main(){
+        int arr[5], i;
+        clrscr();
+        for (i = 0; i &lt; 5; i++)
+        {
+        printf("Enter Value of position %d\n", i+1);
+        scanf("%d", &arr[i]);
+        arr[i] = arr[i] * arr[i];
+        }
+        printf("Squared Array\n");
+        for (i = 0; i &lt; 5; i++)
+        {
+        printf("%d\n", arr[i]);
+        }
+        delay(5000);
+    }
+        </code>
+</pre>
+<h1>OUTPUT</h1>
+<pre>
+    Enter Value of position 1
+    5                                                                               
+    Enter Value of position 2                                                       
+    6                                                                               
+    Enter Value of position 3                                                       
+    9                                                                               
+    Enter Value of position 4                                                       
+    3                                                                               
+    Enter Value of position 5                                                       
+    25                                                                              
+    Squared Array                                                                   
+    25                                                                              
+    36                                                                              
+    81                                                                              
+    9                                                                               
+    625     
+</pre>
+</body>
+
+</html>
