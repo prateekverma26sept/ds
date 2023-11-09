@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/programView.css">
+</head>
+
+<body>
+    
+<pre><code>
+    #include&lt;stdio.h&gt;
+    #include&lt;conio.h&gt;
+    #include&lt;dos.h&gt;
+    
+    int charDifference(char str1, char str2){
+        return (str1 - str2);
+    }
+    void main(){
+        char str[30], str2[30];
+        int i;
+        clrscr();
+        printf("Enter a String\n");
+        gets(str);
+        printf("Enter a another String\n");
+        gets(str2);
+        for (i = 0; str[i] && str2[i]; i++)
+        {
+            printf("%c - %c = %d\n", str[i], str2[i], charDifference(str[i], str2[i]));
+        }
+        
+        delay(5000);
+    }
+        </code>
+</pre>
+<h1>OUTPUT</h1>
+<pre>
+    Enter a String
+    Hello                                                                           
+    Enter a another String                                                          
+    HellO                                                                           
+    H - H = 0                                                                       
+    e - e = 0                                                                       
+    l - l = 0                                                                       
+    l - l = 0                                                                       
+    o - O = 32
+</pre>
+</body>
+
+</html>
