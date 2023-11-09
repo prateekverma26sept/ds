@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/programView.css">
+</head>
+
+<body>
+    
+<pre><code>
+    #include&lt;stdio.h&gt;
+    #include &lt;conio.h&gt;
+    #include &lt;dos.h&gt;
+    int isFull(int stack[], int size, int top){
+        if (top == size-1)
+        {
+        return 1;
+        }
+        return 0;
+    }
+    
+    int isEmpty(int stack[], int top){
+        if (top == -1)
+        {
+        return 1;
+        }
+        return 0;
+    }
+    
+    int push(int stack[], int size, int val, int top){
+        if(isFull(stack, size, top))
+        {
+        return -1;
+        }
+        top++;
+        stack[top] = val;
+        return top;
+    
+    }
+    int pop(int stack[], int top){
+        if (isEmpty(stack, top))
+        {
+        return -1;
+        }
+        top--;
+        return top;
+    }
+    int peek(int stack[], int top){
+        if (isEmpty(stack, top))
+        {
+        return -1;
+        }
+        return top;
+    }
+    
+    void main(){
+        int stack[5], i = -1, val, ind;
+        char choose;
+        clrscr();
+        do
+        {
+        printf("Press 1: Push\tPress 2: Pop\tPress 3: Peek\tPress 4: Exit\t\n");
+        choose = getch();
+        if (choose == '1')
+        {
+            printf("Enter Value \n");
+            scanf("%d", &val);
+            ind = push(stack, 5, val, i);
+            if(ind != -1){
+            i = ind;
+            printf("%d pushed Successfully\n",val);
+            }
+            else{
+            printf("Stack is Full\n");
+            }
+        }
+        else if(choose == '2')
+        {
+            ind = pop(stack, i);
+            if(ind != -1){
+            i = ind;
+            printf("Poped Successfully\n");
+            }
+            else{
+            printf("Stack is Empty\n");
+            }
+        }
+        else if(choose == '3')
+        {
+            ind = peek(stack, i);
+            if(ind != -1){
+            printf("Top Element of Stack is %d\n", stack[ind]);
+            }
+            else{
+            printf("Stack is Empty\n");
+            }
+        }
+        else if(choose == '4')
+        {
+            printf("Exiting From The Program\n");
+        }
+        else
+            printf("Invalid Choice\n");
+    
+        } while (choose != '4');
+        delay(5000);
+    }
+        </code>
+</pre>
+<h1>OUTPUT</h1>
+<pre>
+    Press 1: Push   Press 2: Pop    Press 3: Peek   Press 4: Exit
+    Enter Value                                                                     
+    58                                                                              
+    58 pushed Successfully                                                          
+    Press 1: Push   Press 2: Pop    Press 3: Peek   Press 4: Exit                   
+    Top Element of Stack is 58                                                      
+    Press 1: Push   Press 2: Pop    Press 3: Peek   Press 4: Exit                   
+    Enter Value                                                                     
+    89                                                                              
+    89 pushed Successfully                                                          
+    Press 1: Push   Press 2: Pop    Press 3: Peek   Press 4: Exit                   
+    Top Element of Stack is 89                                                      
+    Press 1: Push   Press 2: Pop    Press 3: Peek   Press 4: Exit                   
+    Poped Successfully                                                              
+    Press 1: Push   Press 2: Pop    Press 3: Peek   Press 4: Exit                   
+    Top Element of Stack is 58                                                      
+    Press 1: Push   Press 2: Pop    Press 3: Peek   Press 4: Exit                   
+    Stack is Empty                                                                  
+    Press 1: Push   Press 2: Pop    Press 3: Peek   Press 4: Exit                   
+    Exiting From The Program                                    
+</pre>
+</body>
+
+</html>
