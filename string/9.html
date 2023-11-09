@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/programView.css">
+</head>
+
+<body>
+    
+<pre><code>
+    #include&lt;stdio.h&gt;
+    #include&lt;conio.h&gt;
+    #include&lt;dos.h&gt;
+    char* strCopy(char dest[], char src[]){
+        int i;
+        for (i = 0; src[i] != '\0'; i++){
+            dest[i] = src[i];
+        }
+        dest[i] = src[i];
+        return dest;
+    }
+    
+    void main(){
+        char str[30], copiedstr[30];
+        clrscr();
+        printf("Enter String\n");
+        gets(str);
+        printf("Copied String is %s\n", strCopy(copiedstr, str));
+        delay(5000);
+    }
+        </code>
+</pre>
+<h1>OUTPUT</h1>
+<pre>
+    Enter String
+    Hello Sir                                                                       
+    Copied String is Hello Sir 
+</pre>
+</body>
+
+</html>
