@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/programView.css">
+</head>
+
+<body>
+    
+<pre><code>
+    #include&lt;stdio.h&gt;
+    #include&lt;conio.h&gt;
+    #include&lt;dos.h&gt;
+    long fibonacci(int num){
+        if (num &lt;= 1)
+            return num;
+        return (fibonacci(num - 1) + fibonacci(num - 2));    
+    }
+    
+    void main(){
+        int n;
+        clrscr();
+        printf("Enter nth term\n");
+        scanf("%d", &n);
+    
+        printf("Fibonacci of %d th term is %ld", n, fibonacci(n));
+        delay(5000);
+    }
+        </code>
+</pre>
+<h1>OUTPUT</h1>
+<pre>
+    Enter nth term
+    10
+    Fibonacci of 10 th term is 55                                                    
+</pre>
+</body>
+
+</html>
