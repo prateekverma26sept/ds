@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/programView.css">
+</head>
+
+<body>
+    
+<pre><code>
+    #include&lt;stdio.h&gt;
+    #include&lt;conio.h&gt;
+    #include&lt;dos.h&gt;
+    
+    char* strConcat(char firststr[], char secondstr[]){
+        int str1len, i;
+        for (str1len = 0; firststr[str1len] != '\0'; str1len++);
+    
+        for (i = 0; secondstr[i] != '\0'; i++)
+        {
+            firststr[str1len++] = secondstr[i]; 
+        }
+        firststr[str1len] = '\0';
+        return firststr;
+    }
+    
+    void main(){
+        char str1[30], str2[30];
+        clrscr();
+        printf("Enter first String\n");
+        gets(str1);
+        printf("Enter second String\n");
+        gets(str2);
+        // strConcat(str1, str2);
+        printf("Concatinated String is %s\n", strConcat(str1, str2));
+        delay(5000);
+    }
+        </code>
+</pre>
+<h1>OUTPUT</h1>
+<pre>
+    Enter first String
+    Hello                                                                           
+    Enter second String                                                             
+    World                                                                           
+    Concatinated String is HelloWorld
+</pre>
+</body>
+
+</html>
