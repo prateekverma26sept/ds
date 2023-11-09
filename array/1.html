@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/programView.css">
+</head>
+
+<body>
+    
+<pre><code>
+    #include&lt;stdio.h&gt;
+    #include&lt;conio.h&gt;
+    #include&lt;dos.h&gt;
+    int main(){
+        int arr[10], i;
+        clrscr();
+        for (i = 0; i &lt; 10; i++)
+        {
+            printf("Enter Value of position %d\n", i+1);
+            scanf("%d", &arr[i]);
+        }
+        for (i = 0; i &lt; 10; i++)
+        {
+            printf("Value at position %d is %d\n", i+1, arr[i]);
+        }
+        delay(5000);
+        return 0;
+    }
+        </code>
+</pre>
+<h1>OUTPUT</h1>
+<pre>
+    Enter Value of position 1                                                       
+    89 
+    Enter Value of position 2                                                      
+    58 
+    Enter Value of position 3                                                       
+    45 
+    Enter Value of position 4                                                       
+    23                                                                              
+    Enter Value of position 5                                                       
+    63                                                                              
+    Enter Value of position 6                                                       
+    86                                                                              
+    Enter Value of position 7                                                       
+    84                                                                              
+    Enter Value of position 8                                                       
+    58                                                                              
+    Enter Value of position 9                                                       
+    68                                                                              
+    Enter Value of position 10                                                      
+    -6                                                                              
+    Value at position 1 is 89                                                       
+    Value at position 2 is 58                                                       
+    Value at position 3 is 45                                                       
+    Value at position 4 is 23                                                       
+    Value at position 5 is 63                                                       
+    Value at position 6 is 86                                                       
+    Value at position 7 is 84                                                       
+    Value at position 8 is 58                                                       
+    Value at position 9 is 68                                                       
+    Value at position 10 is -6
+</pre>
+</body>
+
+</html>
