@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/programView.css">
+</head>
+
+<body>
+    
+<pre><code>
+    #include&lt;stdio.h&gt;
+    #include&lt;conio.h&gt;
+    #include&lt;dos.h&gt;
+    long strLength(char str[]){
+        int len;
+        for (len = 0; str[len] != '\0'; len++);
+        return len;
+    }
+    void main(){
+        char str[30];
+        clrscr();
+        printf("Enter a String\n");
+        gets(str);
+        printf("Length of the given string is : %ld\n", strLength(str));
+        delay(5000);
+    }
+        </code>
+</pre>
+<h1>OUTPUT</h1>
+<pre>
+    Enter a String
+    Hello World                                                                     
+    Length of the given string is : 11  
+</pre>
+</body>
+
+</html>
