@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/programView.css">
+</head>
+
+<body>
+    
+<pre><code>
+    #include &lt;stdio.h&gt;
+    #include&lt;conio.h&gt;
+    #include&lt;dos.h&gt;
+    int findMax(int arr[], int n, int max)
+    {
+        if (n == 0)
+        {
+            return max;
+        }
+    
+        if (arr[n - 1] &gt; max)
+        {
+            max = arr[n - 1];
+        }
+    
+        return findMax(arr, n - 1, max);
+    }
+    
+    void main()
+    {
+        int arr[10], i;
+        clrscr();
+        for (i = 0; i &lt; 10; i++)
+        {
+            printf("Enter Value of %d Postion : \t", i+1);
+            scanf("%d", &arr[i]);
+        }
+        int largest = findMax(arr, 10, arr[0]);
+        printf("The largest element in the array is: %d\n", largest);
+    
+        delay(5000);
+    }
+        </code>
+</pre>
+<h1>OUTPUT</h1>
+<pre>
+    Enter Value of 1 Postion :      25
+    Enter Value of 2 Postion :      35
+    Enter Value of 3 Postion :      102
+    Enter Value of 4 Postion :      58
+    Enter Value of 5 Postion :      5989
+    Enter Value of 6 Postion :      58
+    Enter Value of 7 Postion :      58
+    Enter Value of 8 Postion :      48
+    Enter Value of 9 Postion :      58
+    Enter Value of 10 Postion :     38
+    The largest element in the array is: 5989
+</pre>
+</body>
+
+</html>
