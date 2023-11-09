@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/programView.css">
+</head>
+
+<body>
+    
+<pre><code>
+    #include &lt;stdio.h&gt;
+    #include&lt;conio.h&gt;
+    #include&lt;dos.h&gt;
+    int sumOfDigits(int num)
+    {
+        if (num == 0)
+        {
+            return 0;
+        }
+        else
+        {
+            return num % 10 + sumOfDigits(num / 10);
+        }
+    }
+    
+    void main()
+    {
+        int number, sum;
+        clrscr();
+        printf("Enter a number: ");
+        scanf("%d", &number);
+    
+        sum = sumOfDigits(number);
+    
+        printf("The sum of the digits of %d is %d\n", number, sum);
+    
+        delay(5000);
+    }
+        </code>
+</pre>
+<h1>OUTPUT</h1>
+<pre>
+    Enter a number: 259
+    The sum of the digits of 259 is 16
+</pre>
+</body>
+
+</html>
