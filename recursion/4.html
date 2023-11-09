@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/programView.css">
+</head>
+
+<body>
+    
+<pre><code>
+    #include &lt;stdio.h&gt;
+    #include&lt;conio.h&gt;
+    #include&lt;dos.h&gt;
+    void printBinary(int num)
+    {
+        if (num == 0)
+            return;
+        
+        printBinary(num/2);
+        printf("%d", num%2);
+    }
+    
+    void main()
+    {
+        int num;
+        clrscr();
+        printf("Enter Decimal Number: \n");
+        scanf("%d", &num);
+    
+        if (num &lt; 0) {
+            printf("Please enter a non-negative integer.\n");
+            return 0;
+        }
+        printf("Binary for %d is ", num);
+        printBinary(num);
+    
+        delay(5000);
+    }
+        </code>
+</pre>
+<h1>OUTPUT</h1>
+<pre>
+    Enter Decimal Number: 
+    10
+    Binary for 10 is 1010
+</pre>
+</body>
+
+</html>
