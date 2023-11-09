@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/programView.css">
+</head>
+
+<body>
+    
+<pre><code>
+    #include&lt;stdio.h&gt;
+    #include&lt;conio.h&gt;
+    #include&lt;dos.h&gt;
+    char* strrevcpy(char dest[], char src[]){
+        int i = 0, j = 0;
+        while(src[j] != '\0')
+            j++;
+        
+        while(src[i] != '\0'){
+            dest[i++] = src[--j];
+        } 
+        dest[i] = src[i]; 
+        return dest;
+    }
+    
+    void main(){
+        char str[30], copiedstr[30];
+        clrscr();
+        printf("Enter String\n");
+        gets(str);
+        printf("Copied String is %s\n", strrevcpy(copiedstr, str));
+        delay(5000);
+    }
+        </code>
+</pre>
+<h1>OUTPUT</h1>
+<pre>
+    Enter String
+    CodeWhere                                                                       
+    Copied String is erehWedoC                                                          
+</pre>
+</body>
+
+</html>
