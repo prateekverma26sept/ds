@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/programView.css">
+</head>
+
+<body>
+    
+<pre><code>
+    #include&lt;stdio.h&gt;
+    #include&lt;conio.h&gt;
+    #include&lt;dos.h&gt;
+    char* strtitle(char str[]){
+        int i;
+        for (i = 0; str[i] != '\0'; i++)
+        {
+            if(str[i] == ' ' && (str[i+1] &gt;= 'a' && str[i+1] &lt;= 'z'))
+                str[i+1] -= 32; 
+            else if((i == 0 && (str[i] &gt;= 'a' && str[i] &lt;= 'z')))
+                str[i] -= 32;
+            
+        }
+        return str;
+    }
+    
+    void main(){
+        char str[30];
+        clrscr();
+        printf("Enter a String\n");
+        gets(str);
+        printf("String Before Titlecase: %s\n", str);
+        strtitle(str);
+        printf("String After Titlecase: %s\n", str);
+        delay(5000);
+    }
+        </code>
+</pre>
+<h1>OUTPUT</h1>
+<pre>
+    Enter a String
+    hello world I am a                                                              
+    String Before Titlecase: hello world I am a                                     
+    String After Titlecase: Hello World I Am A  
+</pre>
+</body>
+
+</html>
