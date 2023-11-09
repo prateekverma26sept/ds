@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/programView.css">
+</head>
+
+<body>
+    
+<pre><code>
+    #include&lt;stdio.h&gt;
+    #include&lt;conio.h&gt;
+    #include&lt;dos.h&gt;
+    
+    void main(){
+        int arr[10], i;
+        clrscr();
+        for (i = 0; i &lt; 10; i++)
+        {
+            printf("Enter Value of position %d\n", i+1);
+            scanf("%d", &arr[i]);
+        }
+        printf("Printing Array in Reverse Order\n");
+        for (i = 9; i &gt;= 0; i--)
+        {
+              printf("Value at position %d is %d\n", i+1, arr[i]);
+        }
+        delay(5000);
+    }
+        </code>
+</pre>
+<h1>OUTPUT</h1>
+<pre>
+    Enter Value of position 1
+    98
+    Enter Value of position 2 
+    56
+    Enter Value of position 3 
+    23
+    Enter Value of position 4 
+    58
+    Enter Value of position 5                                                       
+    28                                                                              
+    Enter Value of position 6                                                       
+    76
+    Enter Value of position 7                                                       
+    58                                                                              
+    Enter Value of position 8                                                       
+    57                                                                              
+    Enter Value of position 9                                                       
+    658                                                                             
+    Enter Value of position 10                                                      
+    58                                                                              
+    Printing Array in Reverse Order                                                 
+    Value at position 10 is 58                                                      
+    Value at position 9 is 658                                                      
+    Value at position 8 is 57                                                       
+    Value at position 7 is 58                                                       
+    Value at position 6 is 76                                                       
+    Value at position 5 is 28                                                       
+    Value at position 4 is 58                                                       
+    Value at position 3 is 23                                                       
+    Value at position 2 is 56                                                       
+    Value at position 1 is 98                                                       
+</pre>
+</body>
+
+</html>
