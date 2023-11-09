@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/programView.css">
+</head>
+
+<body>
+    
+<pre><code>
+    #include &lt;stdio.h&gt;
+    #include&lt;conio.h&gt;
+    #include&lt;dos.h&gt;
+    double Mean(int arr[], int n, int index, double sum)
+    {
+        if (index == n)
+        {
+            return sum / n;
+        }
+    
+        sum += arr[index];
+    
+        return Mean(arr, n, index + 1, sum);
+    }
+    
+    void main()
+    {
+        int arr[10], i;
+        float mean;
+        clrscr();
+        for (i = 0; i &lt; 10; i++)
+        {
+            printf("Enter Value of %d Postion : \t", i + 1);
+            scanf("%d", &arr[i]);
+        }
+        mean = Mean(arr, 10, 0, 0.0);
+        printf("The arithmetic mean of the array is: %.2f\n", mean);
+    
+        delay(5000);
+    }
+        </code>
+</pre>
+<h1>OUTPUT</h1>
+<pre>
+    Enter Value of 1 Postion :      2
+    Enter Value of 2 Postion :      3
+    Enter Value of 3 Postion :      5
+    Enter Value of 4 Postion :      56 
+    Enter Value of 5 Postion :      92
+    Enter Value of 6 Postion :      4
+    Enter Value of 7 Postion :      48
+    Enter Value of 8 Postion :      58
+    Enter Value of 9 Postion :      54
+    Enter Value of 10 Postion :     55
+    The arithmetic mean of the array is: 37.70                                   
+</pre>
+</body>
+
+</html>
