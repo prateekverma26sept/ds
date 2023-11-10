@@ -1,0 +1,83 @@
+#include <stdio.h>
+
+#define MAX_VERTICES 100
+
+int graph[MAX_VERTICES][MAX_VERTICES];
+int numVertices, numEdges;
+
+// Function to initialize the adjacency matrix
+void initializeGraph() {
+    for (int i = 0; i < numVertices; i++) {
+        for (int j = 0; j < numVertices; j++) {
+            graph[i][j] = 0;
+        }
+    }
+}
+
+// Function to add an edge to the adjacency matrix
+void addEdge(int start, int end) {
+    graph[start][end] = 1;
+    // For an undirected graph, you may want to set graph[end][start] = 1 as well.
+}
+
+// Function to print the adjacency matrix
+void printGraph() {
+    printf("Adjacency Matrix:\n");
+    for (int i = 0; i < numVertices; i++) {
+        for (int j = 0; j < numVertices; j++) {
+            printf("%d ", graph[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    printf("Enter the number of vertices: ");
+    scanf("%d", &numVertices);
+
+    if (numVertices <= 0 || numVertices > MAX_VERTICES) {
+        printf("Invalid number of vertices.\n");
+        return 1;
+    }
+
+    printf("Enter the number of edges: ");
+    scanf("%d", &numEdges);
+
+    if (numEdges < 0 || numEdges > numVertices * (numVertices - 1) / 2) {
+        printf("Invalid number of edges.\n");
+        return 1;
+    }
+
+    initializeGraph();
+
+    for (int i = 0; i < numEdges; i++) {
+        int start, end;
+        printf("Enter edge %d (start end): ", i + 1);
+        scanf("%d %d", &start, &end);
+
+        if (start < 0 || start >= numVertices || end < 0 || end >= numVertices) {
+            printf("Invalid edge. Vertex index out of bounds.\n");
+            return 1;
+        }
+
+        addEdge(start, end);
+    }
+
+    printGraph();
+
+    return 0;
+}
+
+// OUTPUT:-
+
+// Enter the number of vertices: 4
+// Enter the number of edges: 4
+// Enter edge 1 (start end): 0 1
+// Enter edge 2 (start end): 1 2
+// Enter edge 3 (start end): 2 3
+// Enter edge 4 (start end): 3 0
+// Adjacency Matrix:
+// 0 1 0 0 
+// 0 0 1 0 
+// 0 0 0 1 
+// 1 0 0 0
