@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+    int visited[7] ={0,0,0,0,0,0,0};
+    int ad_mat[7][7]={
+        {0,1,1,1,0,0,0},
+        {1,0,1,0,0,0,0},
+        {1,1,0,1,1,0,0},
+        {1,0,1,0,1,0,0},
+        {0,0,1,1,0,1,1},
+        {0,0,0,0,1,0,0},
+        {0,0,0,0,1,0,0},
+    };
+void DFS(int i)
+{
+    int j;
+    printf("%d ",i);
+    visited[i]=1;//which node is already visited
+    for ( j = 0; j < 7; j++)
+    {
+        if(ad_mat[i][j]==1 && !visited[j])
+        // ==1 means there is a edge connected
+        //also it is not visited
+        {
+            DFS(j);
+        }
+    }
+    
+}
+
+int main()
+{
+    //DFS 
+    DFS(0);
+    return 0; 
+}
+
+// OUTPUT:-
+
+// 0 1 2 3 4 5 6 
