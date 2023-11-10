@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/programView.css">
+</head>
+
+<body>
+    
+<pre><code>
+    #include &lt;stdio.h&gt;
+    #include &lt;alloc.h&gt;
+    #include &lt;conio.h&gt;
+    #include &lt;dos.h&gt;
+    struct node
+    {
+        int data;
+        struct Node *next;
+    };
+    typedef struct node Node;
+    
+    int isEmpty(Node *top)
+    {
+        if (top == NULL)
+        {
+            return 1;
+        }
+        return 0;
+    }
+    
+    int isFull(Node *ptr)
+    {
+        if (ptr == NULL)
+        {
+            return 1;
+        }
+        return 0;
+    }
+    
+    int *push(Node **top, int val)
+    {
+        Node *nn;
+        nn = (Node *)malloc(sizeof(Node));
+        if (isFull(nn))
+        {
+            return NULL;
+        }
+        nn-&gt;data = val;
+        nn-&gt;next = *top;
+        *top = nn;
+        return &(nn-&gt;data);
+    }
+    
+    int pop(Node **top)
+    {
+        Node *temp;
+        if (isEmpty(*top))
+        {
+            return 0;
+        }
+        temp = *top;
+        (*top) = temp-&gt;next;
+        free(temp);
+        return 1;
+    }
+    
+    int *peek(Node *top)
+    {
+        if (isEmpty(top))
+        {
+            return NULL;
+        }
+    
+        return &(top-&gt;data);
+    }
+    
+    void main()
+    {
+        Node *top = NULL;
+        int *val, valid, value;
+    
+        char choose;
+        clrscr();
+        do
+        {
+            printf("Press 1: Push\tPress 2: Pop\tPress 3: Peek\tPress 4: Exit\t\n");
+            choose = getch();
+            if (choose == '1')
+            {
+                printf("Enter Value \n");
+                scanf("%d", &value);
+                val = push(&top, value);
+                if (val == NULL)
+                {
+                    printf("Stack is Full\n");
+                }
+                else
+                {
+                    printf("%d pushed Successfully\n", *val);
+                }
+            }
+            else if (choose == '2')
+            {
+                valid = pop(&top);
+                if (valid)
+                {
+                    printf("Poped Successfully\n");
+                }
+                else
+                {
+                    printf("Stack is Empty\n");
+                }
+            }
+            else if (choose == '3')
+            {
+                val = peek(top);
+                if (val == NULL)
+                {
+                    printf("Stack is Empty\n");
+                }
+                else
+                {
+                    printf("Top Element of Stack is %d\n", *peek(top));
+                }
+            }
+            else if (choose == '4')
+            {
+                printf("Exiting From The Program\n");
+            }
+            else
+                printf("Invalid Choice\n");
+    
+        } while (choose != '4');
+    
+        while(top != NULL){
+            pop(&top);
+        }
+    
+        delay(5000);
+    }
+        </code>
+</pre>
+<h1>OUTPUT</h1>
+<pre>
+    Press 1: Push   Press 2: Pop    Press 3: Peek   Press 4: Exit
+    Enter Value 
+    732
+    732 pushed Successfully
+    Press 1: Push   Press 2: Pop    Press 3: Peek   Press 4: Exit
+    Enter Value 
+    82
+    82 pushed Successfully
+    Press 1: Push   Press 2: Pop    Press 3: Peek   Press 4: Exit
+    Top Element of Stack is 82
+    Press 1: Push   Press 2: Pop    Press 3: Peek   Press 4: Exit
+    Poped Successfully
+    Press 1: Push   Press 2: Pop    Press 3: Peek   Press 4: Exit
+    Top Element of Stack is 732
+    Press 1: Push   Press 2: Pop    Press 3: Peek   Press 4: Exit
+    Poped Successfully
+    Press 1: Push   Press 2: Pop    Press 3: Peek   Press 4: Exit
+    Exiting From The Program                                                   
+</pre>
+</body>
+
+</html>
