@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include<time.h>
+int select(int ary[],int size)
+{
+    int i,j,min,temp;
+    for ( i = 0; i < size-1; i++)
+    {
+        min=i;
+        for ( j = i+1; j < size; j++)
+        {
+            if (ary[j]<ary[min])
+            {
+                min=j;
+            }   
+        }
+        temp=ary[i];
+        ary[i]=ary[min];
+        ary[min]=temp;
+        
+    }
+    return 0;
+}
+int main()
+{
+    int ary[10], i, count;
+    printf("Enter your array size : ");
+    scanf("%d", &count);
+    for (i = 0; i < count; i++)
+    {
+        printf("\nEnter %d value : ", i + 1);
+        scanf("%d", &ary[i]);
+    }
+    clock_t start=clock();
+    select(ary,count);
+    clock_t end=clock();
+    double time_complexity=((double)(end-start))/CLOCKS_PER_SEC;
+    for ( i = 0; i < count; i++)
+    {
+        printf("%d,",ary[i]);
+    }
+    printf("\nTime taken: %f seconds\n", time_complexity);
+    
+}
+
+	output:-
+Enter your array size : 3
+Enter 1 value : 43
+Enter 2 value : 56
+Enter 3 value : 7
+7,43,56,
+Time taken: 0.000001 seconds
+
