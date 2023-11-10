@@ -1,0 +1,94 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+
+#define MAX_VERTICES 100
+
+int graph[MAX_VERTICES][MAX_VERTICES];
+bool visited[MAX_VERTICES];
+int queue[MAX_VERTICES];
+int front = -1, rear = -1;
+int numVertices;
+
+// Function to add an edge to the graph
+void addEdge(int start, int end) {
+    graph[start][end] = 1;
+    graph[end][start] = 1; // For an undirected graph
+}
+
+// Function to perform BFS traversal
+void BFS(int startVertex) {
+    visited[startVertex] = true;
+    queue[++rear] = startVertex;
+
+    while (front != rear) {
+        int currentVertex = queue[++front];
+        printf("%d ", currentVertex);
+
+        for (int i = 0; i < numVertices; i++) {
+            if (graph[currentVertex][i] == 1 && !visited[i]) {
+                queue[++rear] = i;
+                visited[i] = true;
+            }
+        }
+    }
+}
+
+int main() {
+    printf("Enter the number of vertices: ");
+    scanf("%d", &numVertices);
+
+    if (numVertices <= 0 || numVertices > MAX_VERTICES) {
+        printf("Invalid number of vertices.\n");
+        return 1;
+    }
+
+    for (int i = 0; i < numVertices; i++) {
+        visited[i] = false;
+    }
+
+    printf("Enter the number of edges: ");
+    int numEdges;
+    scanf("%d", &numEdges);
+
+    if (numEdges < 0 || numEdges > numVertices * (numVertices - 1) / 2) {
+        printf("Invalid number of edges.\n");
+        return 1;
+    }
+
+    printf("Enter the edges (start end):\n");
+    for (int i = 0; i < numEdges; i++) {
+        int start, end;
+        scanf("%d %d", &start, &end);
+
+        if (start < 0 || start >= numVertices || end < 0 || end >= numVertices) {
+            printf("Invalid edge. Vertex index out of bounds.\n");
+            return 1;
+        }
+
+        addEdge(start, end);
+    }
+
+    printf("Breadth-First Search starting from vertex 0: ");
+    BFS(0);
+
+    return 0;
+}
+
+
+// OUTPUT :-
+
+// Enter the number of vertices: 10
+// Enter the number of edges: 10
+// Enter the edges (start end):
+// 0 1
+// 1 2
+// 2 3
+// 3 4
+// 4 5
+// 5 6
+// 6 7 
+// 7 8
+// 8 9
+// 9 0
+// Breadth-First Search starting from vertex 0: 0 1 9 2 8 3 7 4 6 5 
